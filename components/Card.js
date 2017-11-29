@@ -14,17 +14,19 @@ class Card extends Component {
     const questionTransform = {
       transform: [{ rotateY: showAnswer ? "180deg" : "0deg" }],
       zIndex: showAnswer ? -1 : 1000,
+      opacity: showAnswer ? 0 : 1,
       position: "absolute"
     };
     const answerTransform = {
       transform: [{ rotateY: showAnswer ? "0deg" : "-180deg" }],
-      zIndex: showAnswer ? 1000 : -1
+      zIndex: showAnswer ? 1000 : -1,
+      opacity: showAnswer ? 1 : 0
     };
 
     return (
       <View key={card.id} style={styles.cardContainer}>
         <Animatable.View
-          transition="rotateY"
+          transition={["rotateY", "opacity"]}
           style={[questionTransform, { position: "absolute" }, styles.cardFace]}
         >
           <Text style={styles.question}>{card.question}</Text>
@@ -38,7 +40,7 @@ class Card extends Component {
         </Animatable.View>
 
         <Animatable.View
-          transition="rotateY"
+          transition={["rotateY", "opacity"]}
           style={[answerTransform, styles.cardFace]}
         >
           <Text style={styles.question}>{card.answer}</Text>
