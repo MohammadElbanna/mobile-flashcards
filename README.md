@@ -5,6 +5,14 @@ Native and Redux. It's a mobile application version of Flashcards where you can
 create multiple decks and for every deck you can create a set of questions that
 you can revise anytime you want.
 
+## Openning in Expo
+
+1. Install Expo application app for Android or iOS.
+
+2. Go to this link ==> https://expo.io/@melbanna/mobile-flashcards
+
+3. Scan the QR code using the exp app.
+
 ## Getting Up and running
 
 This app was tested on iOS, but it should work fine on Android devices too. To
